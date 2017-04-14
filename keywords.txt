@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map For TimingUtils
+#######################################
+
+#######################################
+# Classes (KEYWORD1)
+#######################################
+
+decode_results	KEYWORD1
+BrTimer	KEYWORD1
+CbTimer	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setEnabled	KEYWORD2
+setInterval	KEYWORD2
+setIntervalSeconds	KEYWORD2
+setIntervalMinutes	KEYWORD2
+setCallback	KEYWORD2
+setMode	KEYWORD2
+isEnabled	KEYWORD2
+check	KEYWORD2
+
+#
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+ONETIME	LITERAL1
+REPEATING	LITERAL1
