@@ -1,15 +1,15 @@
-#ifndef CALLINGBACKTIMER_H
-#define CALLINGBACKTIMER_H
+#ifndef BOOLEANRETURNINGTIMER_H
+#define BOOLEANRETURNINGTIMER_H
 
 #include <Arduino.h>
 
-typedef void (*timer_callback)(void);
+
 enum TIMER_MODE { ONETIME=0, REPEATING};
 
-class CbTimer {
+class BrTimer {
 public:
 	
-	CbTimer(); 
+	BrTimer(); 
 	
 	void setEnabled(bool en);
 	
@@ -19,21 +19,16 @@ public:
 	
 	void setIntervalMinutes(unsigned long minutes);
 	
-	void setCallback(timer_callback f);
-	
 	void setMode(TIMER_MODE mode);
 	
 	bool isEnabled();
 	
 	// this function must be called inside loop()
-	void check();
+	boolean check();
 	
 private:
 
 	volatile unsigned long mark;
-	
-	// pointer to the callback functions
-	timer_callback callback;
 	
 	unsigned long interval;
 	

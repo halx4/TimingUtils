@@ -1,54 +1,54 @@
-#include "CbTimer.h"
+#include "BrTimer.h"
 
-CbTimer::CbTimer(){
+
+BrTimer::BrTimer(){
 	enabled=false;
 	mode=ONETIME;
+	
 }        
 //----------------------------
-void CbTimer::setEnabled(bool en){
+void BrTimer::setEnabled(bool en){
 	mark=millis();
 	enabled=en;
 }
 //----------------------------
-void CbTimer::setInterval(unsigned long milliSeconds){
+void BrTimer::setInterval(unsigned long milliSeconds){
 	interval=milliSeconds;
 
 }
 //----------------------------
-void CbTimer::setIntervalSeconds(unsigned long seconds){
+void BrTimer::setIntervalSeconds(unsigned long seconds){
 	interval=seconds*1000;
 
 }
 //----------------------------
-void CbTimer::setIntervalMinutes(unsigned long minutes){
+void BrTimer::setIntervalMinutes(unsigned long minutes){
+	
 	interval=minutes*60000;
 }
-//----------------------------
-void CbTimer::setCallback(timer_callback f){
-	callback=f;
 
-}
 //----------------------------
-void CbTimer::setMode(TIMER_MODE newMode){
+void BrTimer::setMode(TIMER_MODE newMode){
 	mode=newMode;
 
 }
 //----------------------------
-bool CbTimer::isEnabled(){
+bool BrTimer::isEnabled(){
 	return enabled;
 
 }
 //----------------------------
-void CbTimer::check(){
+boolean BrTimer::check(){
 	if(enabled){      
-		if(millis() - mark >= interval ){
+		if(millis() - mark >= interval ) {
 			
 			if(mode==ONETIME)enabled=false;
 			else if (mode==REPEATING)setEnabled(true);   //restart timer
-			(*callback)();
-		}                          
+			return true;
+		}
 		
 	}
+	return false;
 }
 //----------------------------
 
