@@ -6,7 +6,6 @@
 # Classes (KEYWORD1)
 #######################################
 
-decode_results	KEYWORD1
 BrTimer	KEYWORD1
 CbTimer	KEYWORD1
 
@@ -23,7 +22,6 @@ setMode	KEYWORD2
 isEnabled	KEYWORD2
 check	KEYWORD2
 
-#
 #######################################
 # Constants (LITERAL1)
 #######################################
